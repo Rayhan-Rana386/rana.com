@@ -174,6 +174,8 @@ export default function ProjectsPage({ onBackToHome, onContactClick }: ProjectsP
                   <img
                     src={project.image || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop"}
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />

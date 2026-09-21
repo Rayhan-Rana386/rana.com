@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowRight, Linkedin, Github, Mail, HelpCircle, Facebook, Instagram } from "lucide-react";
 import { motion } from "motion/react";
 
-const profileImg = "https://dev-alystic.pantheonsite.io/wp-content/uploads/2026/09/Gemini_Generated_Image_7ih3af7ih3af7ih3.png";
+const profileImg = "/profile.webp";
 
 interface HeroProps {
   onStartProjectClick: () => void;
@@ -10,7 +10,7 @@ interface HeroProps {
 }
 
 export default function Hero({ onStartProjectClick, onViewPortfolioClick }: HeroProps) {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     setVisible(true);
@@ -175,8 +175,15 @@ export default function Hero({ onStartProjectClick, onViewPortfolioClick }: Hero
               <img
                 src={profileImg}
                 alt="Rayhan Rana"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-1000"
+                loading="eager"
+                decoding="async"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== "/profile.png") {
+                    target.src = "/profile.png";
+                  }
+                }}
+                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-bg-1/60 via-transparent to-transparent pointer-events-none" />
             </div>

@@ -104,6 +104,8 @@ export default function Portfolio({ onViewAllProjects }: PortfolioProps) {
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />

@@ -52,11 +52,11 @@ export default function AnimatedSection({
     <motion.div
       initial={getInitialPosition()}
       whileInView={getFinalPosition()}
-      viewport={{ once, margin: "-60px" }}
+      viewport={{ once: true, amount: 0.05 }}
       transition={{
-        duration,
-        delay,
-        ease: [0.21, 0.47, 0.32, 0.98], // smooth custom ease
+        duration: Math.min(duration, 0.4),
+        delay: Math.min(delay, 0.2),
+        ease: [0.21, 0.47, 0.32, 0.98],
       }}
       className={className}
     >

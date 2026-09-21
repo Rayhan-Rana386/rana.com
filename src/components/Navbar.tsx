@@ -98,8 +98,10 @@ export default function Navbar({ onContactClick, currentView, onNavigate }: Navb
           {/* Custom Logo Image with fail-safe text fallback */}
           {!logoError ? (
             <img
-              src="https://dev-alystic.pantheonsite.io/wp-content/uploads/2026/09/images-4.png"
+              src="/logo.png"
               alt="Rayhan Rana Logo"
+              loading="eager"
+              decoding="async"
               className="w-16 md:w-20 h-8 md:h-9 object-contain group-hover:scale-105 transition-all duration-300"
               onError={() => setLogoError(true)}
             />

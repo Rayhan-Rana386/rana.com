@@ -187,6 +187,8 @@ export default function Testimonials() {
                     <img
                       src={item.avatar}
                       alt={item.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-10 h-10 rounded-full object-cover border-2 border-accent-pink/30"
                       referrerPolicy="no-referrer"
                     />
